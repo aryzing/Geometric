@@ -9,24 +9,38 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div> 
+      <div className="root">
         <header>
           <h1>Geometric shapes</h1>
           <Subheading />
         </header>
         <div className="buttons">
-          <div
-            role="button"
-            className="square-button"
-            onClick={() => (this.setState({shape: 'Square'}))}
-            style={{fontWeight: this.state.shape === 'Square' ? 'bold' : null}}
-          >Square</div>
-          <div
-            role="button"
-            className="diamond-button"
-            onClick={() => (this.setState({shape: 'Diamond'}))}
-            style={{fontWeight: this.state.shape === 'Diamond' ? 'bold' : null}}
-          >Diamond</div>
+          <div className="container">
+            <div className="row">
+              <div className="col-xs-6">
+                <div
+                  role="button"
+                  className="button square-button"
+                  onClick={() => (this.setState({shape: 'Square'}))}
+                  style={{fontWeight: this.state.shape === 'Square' ? 'bold' : null}}
+                  >Square
+                </div>
+
+              </div>
+              <div className="col-xs-6">
+                <div
+                  role="button"
+                  className="button diamond-button"
+                  onClick={() => (this.setState({shape: 'Diamond'}))}
+                  style={{fontWeight: this.state.shape === 'Diamond' ? 'bold' : null}}
+                  >Diamond
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
         </div>
         <div className="shapes">
           {(() => {
@@ -48,15 +62,15 @@ class Diamond extends React.Component {
   }
   render() {
     return (
-      <div className="square">
+      <div className="shape diamond">
         {(() => {
           var rows = [];
           var delay;
-          for (var row = 0; row < 2 * this.state.size; row++) {
+          for (var row = 0; row < 2 * this.state.size - 1; row++) {
             rows.push(<div className="row" key={'r' + row}>
               {(() => {
                 var items = [];
-                var limit = row > this.state.size ? 2 * this.state.size - row : row;
+                var limit = row > this.state.size - 1 ? 2 * this.state.size - row - 1 : row + 1;
                 for (var item = 0; item < limit; item++) {
                   items.push(<div style={{
                     animationDelay: (delay = (row * 0.1 + item * 0.1)) + 's'
@@ -89,7 +103,7 @@ class Square extends React.Component {
   }
   render() {
     return (
-      <div className="square">
+      <div className="shape square">
         {(() => {
           var rows = [];
           var delay;

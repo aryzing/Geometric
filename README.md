@@ -39,3 +39,5 @@ The size of the diamond is the number of items in its middle row.
 ### Subheading
 
 Displays the subheading, which is either `Current Shapes` or the shape being shown. Upon being mounted, its `setState()` function is made available in a global object, `gsub`. This global object is intended to store the name of the last shape the user requested be drawn as well as an id (in the form of a timestamp). This id is used in the function that is timed out within the shapes' render methods. The effect this has is to check whether the most recent shape requested (the most recent button clicked) is in fact the one that generated the very same timed-out function that is running. This is because the user could request a different shape before the current one is actually fully drawn on screen.
+
+## Bootstrap

@@ -31,7 +31,7 @@ var App = function (_React$Component) {
 
       return React.createElement(
         "div",
-        null,
+        { className: "root" },
         React.createElement(
           "header",
           null,
@@ -47,27 +47,43 @@ var App = function (_React$Component) {
           { className: "buttons" },
           React.createElement(
             "div",
-            {
-              role: "button",
-              className: "square-button",
-              onClick: function onClick() {
-                return _this2.setState({ shape: 'Square' });
-              },
-              style: { fontWeight: this.state.shape === 'Square' ? 'bold' : null }
-            },
-            "Square"
-          ),
-          React.createElement(
-            "div",
-            {
-              role: "button",
-              className: "diamond-button",
-              onClick: function onClick() {
-                return _this2.setState({ shape: 'Diamond' });
-              },
-              style: { fontWeight: this.state.shape === 'Diamond' ? 'bold' : null }
-            },
-            "Diamond"
+            { className: "container" },
+            React.createElement(
+              "div",
+              { className: "row" },
+              React.createElement(
+                "div",
+                { className: "col-xs-6" },
+                React.createElement(
+                  "div",
+                  {
+                    role: "button",
+                    className: "button square-button",
+                    onClick: function onClick() {
+                      return _this2.setState({ shape: 'Square' });
+                    },
+                    style: { fontWeight: this.state.shape === 'Square' ? 'bold' : null }
+                  },
+                  "Square"
+                )
+              ),
+              React.createElement(
+                "div",
+                { className: "col-xs-6" },
+                React.createElement(
+                  "div",
+                  {
+                    role: "button",
+                    className: "button diamond-button",
+                    onClick: function onClick() {
+                      return _this2.setState({ shape: 'Diamond' });
+                    },
+                    style: { fontWeight: this.state.shape === 'Diamond' ? 'bold' : null }
+                  },
+                  "Diamond"
+                )
+              )
+            )
           )
         ),
         React.createElement(
@@ -105,17 +121,17 @@ var Diamond = function (_React$Component2) {
 
       return React.createElement(
         "div",
-        { className: "square" },
+        { className: "shape diamond" },
         function () {
           var rows = [];
           var delay;
-          for (var row = 0; row < 2 * _this4.state.size; row++) {
+          for (var row = 0; row < 2 * _this4.state.size - 1; row++) {
             rows.push(React.createElement(
               "div",
               { className: "row", key: 'r' + row },
               function () {
                 var items = [];
-                var limit = row > _this4.state.size ? 2 * _this4.state.size - row : row;
+                var limit = row > _this4.state.size - 1 ? 2 * _this4.state.size - row - 1 : row + 1;
                 for (var item = 0; item < limit; item++) {
                   items.push(React.createElement("div", { style: {
                       animationDelay: (delay = row * 0.1 + item * 0.1) + 's'
@@ -162,7 +178,7 @@ var Square = function (_React$Component3) {
 
       return React.createElement(
         "div",
-        { className: "square" },
+        { className: "shape square" },
         function () {
           var rows = [];
           var delay;

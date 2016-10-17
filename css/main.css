@@ -96,7 +96,7 @@ header {
   align-items: stretch;
   flex: 1; /* to fill height b/c parent is flex item (and container) */
 }
-.row {
+.shape-row {
   display: flex;
   justify-content: center;
   height: 3rem;

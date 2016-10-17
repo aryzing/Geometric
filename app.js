@@ -128,7 +128,7 @@ var Diamond = function (_React$Component2) {
           for (var row = 0; row < 2 * _this4.state.size - 1; row++) {
             rows.push(React.createElement(
               "div",
-              { className: "row", key: 'r' + row },
+              { className: "shape-row", key: 'r' + row },
               function () {
                 var items = [];
                 var limit = row > _this4.state.size - 1 ? 2 * _this4.state.size - row - 1 : row + 1;
@@ -185,7 +185,7 @@ var Square = function (_React$Component3) {
           for (var row = 0; row < _this6.state.size; row++) {
             rows.push(React.createElement(
               "div",
-              { className: "row", key: 'r' + row },
+              { className: "shape-row", key: 'r' + row },
               function () {
                 var items = [];
                 for (var item = 0; item < _this6.state.size; item++) {

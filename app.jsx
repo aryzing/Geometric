@@ -67,7 +67,7 @@ class Diamond extends React.Component {
           var rows = [];
           var delay;
           for (var row = 0; row < 2 * this.state.size - 1; row++) {
-            rows.push(<div className="row" key={'r' + row}>
+            rows.push(<div className="shape-row" key={'r' + row}>
               {(() => {
                 var items = [];
                 var limit = row > this.state.size - 1 ? 2 * this.state.size - row - 1 : row + 1;
@@ -108,7 +108,7 @@ class Square extends React.Component {
           var rows = [];
           var delay;
           for (var row = 0; row < this.state.size; row++) {
-            rows.push(<div className="row" key={'r' + row}>
+            rows.push(<div className="shape-row" key={'r' + row}>
               {(() => {
                 var items = [];
                 for (var item = 0; item < this.state.size; item++) {

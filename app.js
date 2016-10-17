@@ -105,17 +105,17 @@ var Diamond = function (_React$Component2) {
 
       return React.createElement(
         "div",
-        { className: "square" },
+        { className: "shape diamond" },
         function () {
           var rows = [];
           var delay;
-          for (var row = 0; row < 2 * _this4.state.size; row++) {
+          for (var row = 0; row < 2 * _this4.state.size - 1; row++) {
             rows.push(React.createElement(
               "div",
               { className: "row", key: 'r' + row },
               function () {
                 var items = [];
-                var limit = row > _this4.state.size ? 2 * _this4.state.size - row : row;
+                var limit = row > _this4.state.size - 1 ? 2 * _this4.state.size - row - 1 : row + 1;
                 for (var item = 0; item < limit; item++) {
                   items.push(React.createElement("div", { style: {
                       animationDelay: (delay = row * 0.1 + item * 0.1) + 's'
